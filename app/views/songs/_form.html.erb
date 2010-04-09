@@ -1,0 +1,52 @@
+<% form_for @song, :html => {:multipart => true} do |f| %>
+  <p>
+    <%= f.label :ime %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :oznake %>
+    <%= f.text_field :tag %>
+  </p>
+  <p>
+    <%= f.label :description %>
+    <%= f.text_area :description, :size => "30x10" %>
+  </p>
+  <p>
+    <%= f.label :izvajalec %>
+    <%= f.text_field :preformer %>
+  </p>
+  <p>
+    <%= f.label :playlist %>
+    <%= f.text_field :playlist %>
+  </p>
+  <p>
+    <%= f.label :zvrst %>
+    <%= f.text_field :genre %>
+  </p>
+  <p>
+    <%= f.label :povezava %>
+    <%= f.text_field :url %>
+  </p>
+  <p>
+    <%= f.label :besedilo %>
+    <%= f.text_area :lyrics, :size => "30x10" %>
+  </p>
+  <p>
+    <%= f.label :izvor %>
+    <%= f.collection_select :site_id, Site.all, :id, :name %>
+  </p>
+  <p>
+    <%= f.label :user %>
+    <%= f.collection_select :user_id, User.all, :id, :name %>
+  </p>
+  <p>
+    <%= f.label :datum %>
+    <%= f.datetime_select :date_add %>
+  </p>
+  <p>
+    <%= f.label :ocena %>
+    <%= f.text_field :rate %>
+  </p>
+
+  <%= f.submit "Shrani" %>
+<% end %>

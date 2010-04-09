@@ -1,0 +1,13 @@
+<h1>Vse države</h1>
+<div class="admin">
+  <%= link_to "Dodaj državo", new_country_path %>
+  </div>
+<ul>
+  <% @countries.each do |country| %>
+    <li>
+      <%= link_to country, country %>
+      <%= link_to "Uredi", edit_country_path(country) %>
+      <%= link_to "Odstrani", country, :method => :delete, :confirm => "Ste prepričani?" %>
+    </li>
+  <% end %>
+</ul>

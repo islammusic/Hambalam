@@ -1,0 +1,38 @@
+<h1><%=@user%></h1>
+<table border="0" width="70%">
+  <tr>
+    <td rowspan="3">
+      <% if @user.avatar.exists? then %>
+        <%=image_tag @user.avatar.url(:thumb)%>
+      <% else %>
+        <%=image_tag "/images/default.png"%>
+      <%end%>
+    </td>
+    <td height="33%">
+      <%=@user.name%>
+    </td>
+  </tr>
+  <tr>
+    <td height="33%">
+      <%=@user.surname%>
+    </td>
+  </tr>
+  <tr>
+    <td height="33%">
+      <%=@user.email%>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2">
+      <%=@user.description%>
+    </td>
+    <td>
+      <%=@user.language%>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%=@user.country%>
+    </td>
+  </tr>
+</table>

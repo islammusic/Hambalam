@@ -1,0 +1,13 @@
+<h1>Vsi uporabniki</h1>
+<div class="admin">
+  <%= link_to "Dodaj uporabnika", new_user_path %>
+  </div>
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <%= link_to user, user %>
+      <%= link_to "Uredi", edit_user_path(user) %>
+      <%= link_to "Odstrani", user, :method => :delete, :confirm => "Ste prepričani?" %>
+    </li>
+  <% end %>
+</ul>

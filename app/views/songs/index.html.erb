@@ -1,0 +1,13 @@
+<h1>Vse pesmi</h1>
+<div class="admin">
+  <%= link_to "Dodaj pesem", new_song_path %>
+  </div>
+<ul>
+  <% @songs.each do |song| %>
+    <li>
+      <%= link_to song, song %>
+      <%= link_to "Uredi", edit_song_path(song) %>
+      <%= link_to "Odstrani", song, :method => :delete, :confirm => "Ste prepričani?" %>
+    </li>
+  <% end %>
+</ul>

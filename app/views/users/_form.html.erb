@@ -1,0 +1,45 @@
+<% form_for @user, :html => {:multipart => true} do |f| %>
+  <p>
+    <%= f.label :ime %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :priimek %>
+    <%= f.text_field :surname %>
+  </p>
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :pass %>
+    <%= f.password_field :pass %>
+  </p>
+  <p>
+    <%= f.label :description %>
+    <%= f.text_area :description, :size => "30x10" %>
+  </p>
+  <p>
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %>
+  </p>
+  <p>
+    <%= f.label :Spol %>
+    <%= f.text_field :sex%>
+    <%# select :user, :sex, [ ["M",1], ["F",0]] %>
+  </p>
+  <p>
+    <%= f.label :Jezik %>
+    <%= f.collection_select :language_id, Language.all, :id, :name, :include_blank => true %>
+  </p>
+  <p>
+    <%= f.label :Drzava %>
+    <%= f.collection_select :country_id, Country.all, :id, :name, :include_blank => true %>
+  </p>
+
+  <%= f.submit "Shrani" %>
+<% end %>

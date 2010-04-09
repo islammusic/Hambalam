@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+  "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <title>HamBaLam</title>
+  <%= stylesheet_link_tag 'application' %>
+</head>
+<body>
+  <div id="head">
+    <h1>
+      <%= link_to "HamBaLam", root_path %>
+    </h1>
+    <ul>
+      <li><%= link_to "Songs", songs_path %></li>
+      <li><%= link_to "Users", users_path %></li>
+      <li><%= link_to "Countries", countries_path %></li>
+      <li><%= link_to "Languages", languages_path %></li>
+      <li><%= link_to "Sites", sites_path %></li>
+    </ul>
+    
+    <br class="clear">
+  </div>
+
+  <div id="content">
+    <%= yield %>
+  </div>
+</body>
+</html>

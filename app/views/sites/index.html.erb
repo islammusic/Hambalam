@@ -1,0 +1,13 @@
+<h1>Vse strani</h1>
+<div class="admin">
+  <%= link_to "Dodaj stran", new_site_path %>
+  </div>
+<ul>
+  <% @sites.each do |site| %>
+    <li>
+      <%= link_to site, site %>
+      <%= link_to "Uredi", edit_site_path(site) %>
+      <%= link_to "Odstrani", site, :method => :delete, :confirm => "Ste prepričani?" %>
+    </li>
+  <% end %>
+</ul>

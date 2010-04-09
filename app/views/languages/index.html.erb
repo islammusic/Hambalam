@@ -1,0 +1,13 @@
+<h1>Jeziki</h1>
+<div class="admin">
+  <%= link_to "Nov jezik", new_language_path %>
+</div>
+<ul>
+<% @languages.each do |language| %>
+  <li>
+    <%= language %>
+    <%= link_to "Uredi", edit_language_path(language) %>
+    <%= link_to "Odstrani", language, :method => :delete, :confirm => "Ste prepričani?" %>
+    </li>
+<% end %>
+</ul>
